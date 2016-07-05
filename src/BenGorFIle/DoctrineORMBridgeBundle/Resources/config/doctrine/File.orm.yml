@@ -1,0 +1,35 @@
+# This file is part of the BenGorFileBundle package.
+#
+# (c) Beñat Espiña <benatespina@gmail.com>
+# (c) Gorka Laucirica <gorka.lauzirika@gmail.com>
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+BenGorFile\File\Domain\Model\File:
+    type: mappedSuperclass
+    repositoryClass: BenGorFile\DoctrineORMBridge\Infrastructure\Persistence\DoctrineORMFileRepository
+    table: file
+    id:
+        id:
+            column: id
+            type: file_id
+    uniqueConstraints:
+        search_idx:
+            columns:
+                - name
+                - extension
+    embedded:
+        name:
+            class: BenGorFile\File\Domain\Model\FileName
+            columnPrefix: false
+        mimeType:
+            class: BenGorFile\File\Domain\Model\FileMimeType
+            columnPrefix: false
+    fields:
+        createdOn:
+            column: created_on
+            type: datetime
+        updatedOn:
+            column: updated_on
+            type: datetime
