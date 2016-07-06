@@ -41,74 +41,11 @@ class DoctrineORMServicesPassSpec extends ObjectBehavior
         $container->getParameter('bengor_file.config')->shouldBeCalled()->willReturn([
             'file_class' => [
                 'file' => [
-                    'class'         => 'AppBundle\Entity\File',
-                    'firewall'      => 'main',
-                    'persistence'   => 'doctrine_odm_mongodb',
-                    'default_roles' => [
-                        'ROLE_USER',
-                    ],
-                    'use_cases'     => [
-                        'security'        => [
-                            'enabled' => true,
-                        ],
-                        'sign_up'         => [
-                            'enabled' => true,
-                            'type'    => 'default',
-                        ],
-                        'change_password' => [
-                            'enabled' => true,
-                            'type'    => 'default',
-                        ],
-                        'remove'          => [
-                            'enabled' => true,
-                        ],
-                    ],
-                    'routes'        => [
-                        'security'                  => [
-                            'login'                     => [
-                                'name' => 'bengor_file_file_login',
-                                'path' => '/file/login',
-                            ],
-                            'login_check'               => [
-                                'name' => 'bengor_file_file_login_check',
-                                'path' => '/file/login_check',
-                            ],
-                            'logout'                    => [
-                                'name' => 'bengor_file_file_logout',
-                                'path' => '/file/logout',
-                            ],
-                            'success_redirection_route' => 'bengor_file_file_homepage',
-                        ],
-                        'sign_up'                   => [
-                            'name'                      => 'bengor_file_file_sign_up',
-                            'path'                      => '/file/sign-up',
-                            'success_redirection_route' => 'bengor_file_file_homepage',
-                        ],
-                        'invite'                    => [
-                            'name'                      => 'bengor_file_file_invite',
-                            'path'                      => '/file/invite',
-                            'success_redirection_route' => null,
-                        ],
-                        'enable'                    => [
-                            'name'                      => 'bengor_file_file_enable',
-                            'path'                      => '/file/confirmation-token',
-                            'success_redirection_route' => null,
-                        ],
-                        'change_password'           => [
-                            'name'                      => 'bengor_file_file_change_password',
-                            'path'                      => '/file/change-password',
-                            'success_redirection_route' => null,
-                        ],
-                        'request_remember_password' => [
-                            'name'                      => 'bengor_file_file_request_remember_password',
-                            'path'                      => '/file/remember-password',
-                            'success_redirection_route' => null,
-                        ],
-                        'remove'                    => [
-                            'name'                      => 'bengor_file_file_remove',
-                            'path'                      => '/file/remove',
-                            'success_redirection_route' => null,
-                        ],
+                    'class'       => 'AppBundle\Entity\File',
+                    'firewall'    => 'main',
+                    'persistence' => 'doctrine_odm_mongodb',
+                    'filesystem'  => [
+                        'gaufrette' => 'gaufrette-configured-filesystem',
                     ],
                 ],
             ],
@@ -122,74 +59,11 @@ class DoctrineORMServicesPassSpec extends ObjectBehavior
         $container->getParameter('bengor_file.config')->shouldBeCalled()->willReturn([
             'file_class' => [
                 'file' => [
-                    'class'         => 'AppBundle\Entity\File',
-                    'firewall'      => 'main',
-                    'persistence'   => 'doctrine_orm',
-                    'default_roles' => [
-                        'ROLE_USER',
-                    ],
-                    'use_cases'     => [
-                        'security'        => [
-                            'enabled' => true,
-                        ],
-                        'sign_up'         => [
-                            'enabled' => true,
-                            'type'    => 'default',
-                        ],
-                        'change_password' => [
-                            'enabled' => true,
-                            'type'    => 'default',
-                        ],
-                        'remove'          => [
-                            'enabled' => true,
-                        ],
-                    ],
-                    'routes'        => [
-                        'security'                  => [
-                            'login'                     => [
-                                'name' => 'bengor_file_file_login',
-                                'path' => '/file/login',
-                            ],
-                            'login_check'               => [
-                                'name' => 'bengor_file_file_login_check',
-                                'path' => '/file/login_check',
-                            ],
-                            'logout'                    => [
-                                'name' => 'bengor_file_file_logout',
-                                'path' => '/file/logout',
-                            ],
-                            'success_redirection_route' => 'bengor_file_file_homepage',
-                        ],
-                        'sign_up'                   => [
-                            'name'                      => 'bengor_file_file_sign_up',
-                            'path'                      => '/file/sign-up',
-                            'success_redirection_route' => 'bengor_file_file_homepage',
-                        ],
-                        'invite'                    => [
-                            'name'                      => 'bengor_file_file_invite',
-                            'path'                      => '/file/invite',
-                            'success_redirection_route' => null,
-                        ],
-                        'enable'                    => [
-                            'name'                      => 'bengor_file_file_enable',
-                            'path'                      => '/file/confirmation-token',
-                            'success_redirection_route' => null,
-                        ],
-                        'change_password'           => [
-                            'name'                      => 'bengor_file_file_change_password',
-                            'path'                      => '/file/change-password',
-                            'success_redirection_route' => null,
-                        ],
-                        'request_remember_password' => [
-                            'name'                      => 'bengor_file_file_request_remember_password',
-                            'path'                      => '/file/remember-password',
-                            'success_redirection_route' => null,
-                        ],
-                        'remove'                    => [
-                            'name'                      => 'bengor_file_file_remove',
-                            'path'                      => '/file/remove',
-                            'success_redirection_route' => null,
-                        ],
+                    'class'       => 'AppBundle\Entity\File',
+                    'firewall'    => 'main',
+                    'persistence' => 'doctrine_orm',
+                    'filesystem'  => [
+                        'gaufrette' => 'gaufrette-configured-filesystem',
                     ],
                 ],
             ],
