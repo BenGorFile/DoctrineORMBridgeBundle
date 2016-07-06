@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace BenGorFIle\DoctrineORMBridgeBundle\DependencyInjection\Compiler;
+namespace BenGorFile\DoctrineORMBridgeBundle\DependencyInjection\Compiler;
 
 use BenGorFile\DoctrineORMBridge\Infrastructure\Persistence\Types\FileIdType;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

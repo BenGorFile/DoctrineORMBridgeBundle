@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace BenGorFIle\DoctrineORMBridgeBundle;
+namespace BenGorFile\DoctrineORMBridgeBundle;
 
 use BenGorFile\DoctrineORMBridgeBundle\DependencyInjection\Compiler\DoctrineORMCustomTypesPass;
 use BenGorFile\DoctrineORMBridgeBundle\DependencyInjection\Compiler\DoctrineORMServicesPass;
