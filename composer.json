@@ -19,7 +19,7 @@
     "require": {
         "php": "^5.5 || ^7.0",
         "bengor-file/doctrine-orm-bridge": "dev-master",
-        "bengor/file-bundle": "dev-master",
+        "bengor-file/file-bundle": "dev-master",
         "doctrine/doctrine-bundle": "^1.6"
     },
     "require-dev": {
