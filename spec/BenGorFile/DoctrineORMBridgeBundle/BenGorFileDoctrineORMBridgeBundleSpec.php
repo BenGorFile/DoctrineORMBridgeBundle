@@ -46,7 +46,7 @@ class BenGorFileDoctrineORMBridgeBundleSpec extends ObjectBehavior
     function it_builds(ContainerBuilder $container)
     {
         $container->getParameter('kernel.bundles')->shouldBeCalled()->willReturn([
-            'BenGorFileBenGorFileBundle' => 'BenGorFile\\FileBundle\\BenGorFileBundle',
+            'BenGorFileBundle' => 'BenGorFile\\FileBundle\\BenGorFileBundle',
             'DoctrineBundle'   => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
         ]);
 

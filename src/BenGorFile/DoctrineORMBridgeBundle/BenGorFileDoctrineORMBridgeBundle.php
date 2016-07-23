@@ -33,7 +33,7 @@ class BenGorFileDoctrineORMBridgeBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
-        $this->checkDependencies(['BenGorFileBenGorFileBundle', 'DoctrineBundle'], $container);
+        $this->checkDependencies(['BenGorFileBundle', 'DoctrineBundle'], $container);
 
         $container
             ->addCompilerPass(new DoctrineORMCustomTypesPass(), PassConfig::TYPE_OPTIMIZE)
