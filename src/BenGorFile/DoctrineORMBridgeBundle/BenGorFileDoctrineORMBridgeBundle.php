@@ -24,7 +24,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author Beñat Espiña <benatespina@gmail.com>
  */
-class DoctrineORMBridgeBundle extends Bundle
+class BenGorFileDoctrineORMBridgeBundle extends Bundle
 {
     use DependentBenGorFileBundle;
 
@@ -33,7 +33,7 @@ class DoctrineORMBridgeBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
-        $this->checkDependencies(['BenGorFileBundle', 'DoctrineBundle'], $container);
+        $this->checkDependencies(['BenGorFileBenGorFileBundle', 'DoctrineBundle'], $container);
 
         $container
             ->addCompilerPass(new DoctrineORMCustomTypesPass(), PassConfig::TYPE_OPTIMIZE)
@@ -42,7 +42,7 @@ class DoctrineORMBridgeBundle extends Bundle
         $container->loadFromExtension('doctrine', [
             'orm' => [
                 'mappings' => [
-                    'DoctrineORMBridgeBundle' => [
+                    'BenGorFileDoctrineORMBridgeBundle' => [
                         'type'      => 'yml',
                         'is_bundle' => true,
                         'prefix'    => 'BenGorFile\\File\\Domain\\Model',
