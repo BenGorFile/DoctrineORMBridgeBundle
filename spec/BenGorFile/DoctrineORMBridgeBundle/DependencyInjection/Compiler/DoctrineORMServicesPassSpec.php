@@ -70,6 +70,15 @@ class DoctrineORMServicesPassSpec extends ObjectBehavior
         ]);
 
         $container->setDefinition(
+            'bengor.file.infrastructure.persistence.file_specification_factory',
+            Argument::type(Definition::class)
+        )->shouldBeCalled()->willReturn($definition);
+        $container->setAlias(
+            'bengor_file.file.specification_factory',
+            'bengor.file.infrastructure.persistence.file_specification_factory'
+        )->shouldBeCalled();
+
+        $container->setDefinition(
             'bengor.file.infrastructure.persistence.file_repository',
             Argument::type(Definition::class)
         )->shouldBeCalled()->willReturn($definition);

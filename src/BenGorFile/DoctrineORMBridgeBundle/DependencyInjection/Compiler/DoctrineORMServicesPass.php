@@ -13,6 +13,7 @@
 namespace BenGorFile\DoctrineORMBridgeBundle\DependencyInjection\Compiler;
 
 use BenGorFile\DoctrineORMBridge\Infrastructure\Persistence\DoctrineORMFileRepository;
+use BenGorFile\DoctrineORMBridge\Infrastructure\Persistence\DoctrineORMFileSpecificationFactory;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -38,6 +39,16 @@ class DoctrineORMServicesPass implements CompilerPassInterface
             if ('doctrine_orm' !== $file['persistence']) {
                 continue;
             }
+            $container->setDefinition(
+                'bengor.file.infrastructure.persistence.' . $key . '_specification_factory',
+                (new Definition(
+                    DoctrineORMFileSpecificationFactory::class
+                ))->setPublic(false)
+            );
+            $container->setAlias(
+                'bengor_file.' . $key . '.specification_factory',
+                'bengor.file.infrastructure.persistence.' . $key . '_specification_factory'
+            );
 
             $container->setDefinition(
                 'bengor.file.infrastructure.persistence.' . $key . '_repository',
